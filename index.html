@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Lilita+One&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WEBSITE</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: White;
+
+        }
+        h1 {
+            text-align: center;
+            color: black;
+            margin-bottom: 30px;
+
+        }
+        .container {
+            max-width: 1000px;
+            margin: auto;
+            padding: 20px;
+            background: #83c1dd;
+            border-radius: 30px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .container:hover {
+        transform: scale(1.05); /* Perbesar sedikit saat hover */
+    }
+
+        .button-container {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+        button {
+            flex: 1;
+            padding: 10px 15px;
+            background-color: #5496b1;
+            color: black;
+            border: none;
+            border-radius: 1px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s;
+            font-family: "Lilita One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 1rem;
+        }
+        button:hover {
+            background-color: White;
+            transform: translateY(-2px);
+        }
+        .card-container {
+            display: none; /* Awalnya disembunyikan */
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        .card {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 10px 10px 5px black;
+            margin: 10px;
+            padding: 20px;
+            flex: 1 1 calc(30% - 20px); /* Ukuran kartu */
+            box-sizing: border-box;
+            transition: transform 0.4s;
+            text-align: center;
+           font-family: "Caveat", cursive;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 1rem;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+        }
+        .card img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin-bottom: 10px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            padding: 10px;
+            text-align: center;
+            border: 2px solid #333;
+        }
+        th {
+            background-color: White;
+            color: black;
+        }
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+        .gallery img {
+            width: calc(33% - 10px);
+            margin-bottom: 10px;
+            border-radius: 5px;
+            transition: transform 0.3s;
+        }
+        h3{
+            font-size: 1,8rem!important;
+        }
+
+    </style>
+    <script>
+        function toggleCards(cardType) {
+            const cardContainers = ['home','siswaCards', 'guruCards', 'piketCards', 'strukturCards', 'gallery', 'jadwalPelajaran', 'kegiatanKelas'];
+
+            // Sembunyikan semua kartu
+            cardContainers.forEach(id => {
+                const container = document.getElementById(id);
+                if (container) {
+                    container.style.display = id === cardType ? "flex" : "none";
+                }
+            });
+        }
+    </script>
+</head>
+
+
+<body>
+     
+    <div class="container">
+        <footer style="text-align: center; background-color: #0f0f0f;
+          color: white; border-radius: 30px 30px 30px 30px; margin-top: 0;">
+            <img src="TBY.png" alt="R-removebg-preview" style="margin-bottom: 5px; width: 300px; height: auto;">
+            <h2>DATA KELAS XII TKJ 2</h2>
+          </footer>
+
+        
+
+
+        <div class="button-container">
+            <button onclick="toggleCards('home')">Home</button>
+            <button onclick="toggleCards('siswaCards')">Data Siswa</button>
+            <button onclick="toggleCards('guruCards')">Data Guru</button>
+            <button onclick="toggleCards('piketCards')">Piket Kelas</button>
+            <button onclick="toggleCards('strukturCards')">Struktur Kelas</button>
+            <button onclick="toggleCards('jadwalPelajaran')">Jadwal Pelajaran</button>
+            <button onclick="toggleCards('kegiatanKelas')">Kegiatan Kelas</button>
+            <button onclick="toggleCards('gallery')">Galeri Foto</button>
+        </div>
+
+        <div id="home" class="Home" style="text-align: center; padding: 20px;">
+            <!-- Menambahkan Heading H1 untuk Judul -->
+            <h1 style="font-size: 36px; font-weight: bold; margin-top: 50px;">SELAMAT DATANG DI WEBSITE XII TKJ TAMBAKBOYO</h1>
+            
+          
+        </div>
+        
+
+        <div id="siswaCards" class="card-container">
+            <div class="card" style="position: relative; text-align: center; padding: 20px;">
+                <img src="R-removebg-preview.png" alt="Logo" style="position: absolute; top: 10px; left: 10px; width: 40px; height: auto;">
+                <img src="user.jfif" alt="Foto Abdullah Ali Havid" style="width: 100px; height: 100px; margin-top: 30px;">
+                <h3>MELISA GIOVANI</h3>
+                <p>Kelas: XII TKJ 2 </p>
+            </div>
+
+            <div class="card" style="position: relative; text-align: center; padding: 20px;">
+                <img src="R-removebg-preview.png" alt="Logo" style="position: absolute; top: 10px; left: 10px; width: 40px; height: auto;">
+                <img src="user.jfif" alt="Foto Achmad Rafellino Dwi Kurniawan">
+                <h3>MUHAMMAD AFIFATUL ROHMAN</h3>
+                <p>Kelas: XII TKJ 2 </p>
+            </div>
+            <div class="card" style="position: relative; text-align: center; padding: 20px;">
+                <img src="R-removebg-preview.png" alt="Logo" style="position: absolute; top: 10px; left: 10px; width: 40px; height: auto;">
+                <img src="user.jfif" alt="Foto Adtya Pratama Putra Wahyudianto">
+                <h3>NAFA ADICK PUTRA</h3>
+                <p>Kelas: XII TKJ 2</p>
+            </div>
+            <div class="card" style="position: relative; text-align: center; padding: 20px;">
+                <img src="R-removebg-preview.png" alt="Logo" style="position: absolute; top: 10px; left: 10px; width: 40px; height: auto;">
+                <img src="user.jfif" alt="Foto Afdhal Ulum">
+                <h3>NAILA ARIFATUS SOLIKAH</h3>
+                <p>Kelas: XII TKJ 2</p>
+            </div>
+            <div class="card" style="position: relative; text-align: center; padding: 20px;">
+                <img src="R-removebg-preview.png" alt="Logo" style="position: absolute; top: 10px; left: 10px; width: 40px; height: auto;">
+                <img src="user.jfif" alt="Foto Ahmad Arif Muzaki">
+                <h3>NANDA DWI YUSUH BAHARI</h3>
+                <p>Kelas: XII TKJ 2</p>
+            </div>
+            <div class="card" style="position: relative; text-align: center; padding: 20px;">
+                <img src="R-removebg-preview.png" alt="Logo" style="position: absolute; top: 10px; left: 10px; width: 40px; height: auto;">
+                <img src="user.jfif" alt="Foto Ahmad Fadli Nur Ibad">
+                <h3>NENO STIAN DHARMAWAN</h3>
+                <p>Kelas: XII TKJ 2</p>
+            </div>
+            <div class="card" style="position: relative; text-align: center; padding: 20px;">
+                <img src="R-removebg-preview.png" alt="Logo" style="position: absolute; top: 10px; left: 10px; width: 40px; height: auto;">
+                <img src="user.jfif" alt="Foto Ahmad Risky Putra Indrawan">
+                <h3>NOVA INTAN NUR AINI</h3>
+                <p>Kelas: XII TKJ 2</p>
+            </div>
+            <div class="card" style="position: relative; text-align: center; padding: 20px;">
+                <img src="R-removebg-preview.png" alt="Logo" style="position: absolute; top: 10px; left: 10px; width: 40px; height: auto;">
+                <img src="user.jfif" Aalt="Foto Ahmad Zaenal Prayogi">
+                <h3>NOVITA HANDAYANI</h3>
+                <p>Kelas: XII TKJ 2</p>
+            </div>
+            <div class="card" style="position: relative; text-align: center; padding: 20px;">
+                <img src="R-removebg-preview.png" alt="Logo" style="position: absolute; top: 10px; left: 10px; width: 40px; height: auto;">
+                <img src="user.jfif" alt="Foto Ahmad Zaeni">
+                <h3>NUNGKI ALI FATONI</h3>
+                <p>Kelas: XII TKJ 2</p>
+            </div>
+            <div class="card" style="position: relative; text-align: center; padding: 20px;">
+                <img src="R-removebg-preview.png" alt="Logo" style="position: absolute; top: 10px; left: 10px; width: 40px; height: auto;">
+                <img src="user.jfif" alt="Foto Aldi Rahmaka">
+                <h3>NURMAI DAMAYANTI</h3>
+                <p>Kelas: XII TKJ 2</p>
+            </div>
+            <div class="card" style="position: relative; text-align: center; padding: 20px;">
+                <img src="R-removebg-preview.png" alt="Logo" style="position: absolute; top: 10px; left: 10px; width: 40px; height: auto;">>
+                <img src="user.jfif" alt="Foto Aldi Rizki Utomo">
+                <h3>NURUL ISMAYNI</h3>
+                <p>Kelas: XII TKJ 2</p>
+            </div>
+            <div class="card" style="position: relative; text-align: center; padding: 20px;">
+                <img src="R-removebg-preview.png" alt="Logo" style="position: absolute; top: 10px; left: 10px; width: 40px; height: auto;">
+                <img src="user.jfif" alt="Foto Alfin Maulana">
+                <h3>PUTRI ANGELINA</h3>
+                <p>Kelas: XII TKJ 2</p>
+            </div>
+            <div class="card" style="position: relative; text-align: center; padding: 20px;">
+                <img src="R-removebg-preview.png" alt="Logo" style="position: absolute; top: 10px; left: 10px; width: 40px; height: auto;">
+                <img src="user.jfif" alt="Foto Andik Saputro">
+                <h3>RAHMA EKA NUR SAFITRI</h3>
+                <p>Kelas: XII TKJ 2</p>
+            </div>
+            <div class="card" style="position: relative; text-align: center; padding: 20px;">
+                <img src="R-removebg-preview.png" alt="Logo" style="position: absolute; top: 10px; left: 10px; width: 40px; height: auto;">
+                <img src="user.jfif" alt="Foto Andika Adi Pratama">
+                <h3>RIZQ NOVELIAN SYAHPUTRA</h3>
+                <p>Kelas: XII TKJ 2</p>
+            </div>
+            <div class="card" style="position: relative; text-align: center; padding: 20px;">
+                <img src="R-removebg-preview.png" alt="Logo" style="position: absolute; top: 10px; left: 10px; width: 40px; height: auto;">
+                <img src="user.jfif" alt="Foto Andika Ardi Anto">
+                <h3>ROUDHOTUL JANNAH</h3>
+                <p>Kelas: XII TKJ 2</p>
+            </div>
+            <div class="card" style="position: relative; text-align: center; padding: 20px;">
+                <img src="R-removebg-preview.png" alt="Logo" style="position: absolute; top: 10px; left: 10px; width: 40px; height: auto;">
+                <img src="user.jfif" alt="Foto Ardian Dwi Nugroho">
+                <h3>S KISMIATI</h3>
+                <p>Kelas: XII TKJ 2</p>
+            </div>
+            <div class="card" style="position: relative; text-align: center; padding: 20px;">
+                <img src="R-removebg-preview.png" alt="Logo" style="position: absolute; top: 10px; left: 10px; width: 40px; height: auto;">
+                <img src="user.jfif" alt="Foto Azzam Maulana">
+                <h3>SEKAR AYU A</h3>
+                <p>Kelas: XII TKJ 2</p>
+            </div>
+            <div class="card" style="position: relative; text-align: center; padding: 20px;">
+                <img src="R-removebg-preview.png" alt="Logo" style="position: absolute; top: 10px; left: 10px; width: 40px; height: auto;">
+                <img src="user.jfif" alt="Foto Bagus Candra">
+                <h3>SISTIA DEWI MUSTIFA</h3>
+                <p>Kelas: XII TKJ 2</p>
+            </div>
+            <div class="card" style="position: relative; text-align: center; padding: 20px;">
+                <img src="R-removebg-preview.png" alt="Logo" style="position: absolute; top: 10px; left: 10px; width: 40px; height: auto;">
+                <img src="user.jfif" alt="Foto Bayu Aditya">
+                <h3>SITI AISYAH</h3>
+                <p>Kelas: XII TKJ 2</p>
+            </div>
+            <div class="card" style="position: relative; text-align: center; padding: 20px;">
+                <img src="R-removebg-preview.png" alt="Logo" style="position: absolute; top: 10px; left: 10px; width: 40px; height: auto;">
+                <img src="user.jfif" alt="Foto Bima Dwi Putra">
+                <h3>SITI FAIZATIN</h3>
+                <p>Kelas: XII TKJ 2</p>
+            </div>
+            <div class="card" style="position: relative; text-align: center; padding: 20px;">
+                <img src="R-removebg-preview.png" alt="Logo" style="position: absolute; top: 10px; left: 10px; width: 40px; height: auto;">
+                <img src="user.jfif" alt="Foto Dela Dwi Sari">
+                <h3>SITI NUR LAILA</h3>
+                <p>Kelas: XII TKJ 2</p>
+            </div>
+            <div class="card" style="position: relative; text-align: center; padding: 20px;">
+                <img src="R-removebg-preview.png" alt="Logo" style="position: absolute; top: 10px; left: 10px; width: 40px; height: auto;">
+                <img src="user.jfif" alt="Foto Dimas Rian">
+                <h3>SRI HARTATIK</h3>
+                <p>Kelas: XII TKJ 2</p>
+            </div>
+            <div class="card" style="position: relative; text-align: center; padding: 20px;">
+                <img src="R-removebg-preview.png" alt="Logo" style="position: absolute; top: 10px; left: 10px; width: 40px; height: auto;">
+                <img src="user.jfif" alt="Foto Eko Prasetyo">
+                <h3>SRI WAHYU INDAYANI</h3>
+                <p>Kelas: XII TKJ 2</p>
+            </div>
+            <div class="card" style="position: relative; text-align: center; padding: 20px;">
+                <img src="R-removebg-preview.png" alt="Logo" style="position: absolute; top: 10px; left: 10px; width: 40px; height: auto;">
+                <img src="user.jfif" alt="Foto Eko Rahman">
+                <h3>SYNTYA MEI RIZKA ZULFA</h3>
+                <p>Kelas: XII TKJ 2</p>
+            </div>
+            <div class="card" style="position: relative; text-align: center; padding: 20px;">
+                <img src="R-removebg-preview.png" alt="Logo" style="position: absolute; top: 10px; left: 10px; width: 40px; height: auto;">
+                <img src="user.jfif" alt="Foto Evan Reza">
+                <h3>TASYA INDINA DEWI RAHMANIASTI</h3>
+                <p>Kelas: XII TKJ 2</p>
+            </div>
+            <div class="card" style="position: relative; text-align: center; padding: 20px;">
+                <img src="R-removebg-preview.png" alt="Logo" style="position: absolute; top: 10px; left: 10px; width: 40px; height: auto;">
+                <img src="user.jfif" alt="Foto Fandi">
+                <h3>TIANA INDRA SARI</h3>
+                <p>Kelas: XII TKJ 2</p>
+            </div>
+            <div class="card" style="position: relative; text-align: center; padding: 20px;">
+                <img src="R-removebg-preview.png" alt="Logo" style="position: absolute; top: 10px; left: 10px; width: 40px; height: auto;">
+                <img src="user.jfif" alt="Foto Farhan">
+                <h3>WAFDA ISNANIA FAJAR WATI</h3>
+                <p>Kelas: XII TKJ 2</p>
+            </div>
+            <div class="card" style="position: relative; text-align: center; padding: 20px;">
+                <img src="R-removebg-preview.png" alt="Logo" style="position: absolute; top: 10px; left: 10px; width: 40px; height: auto;">
+                <img src="user.jfif" alt="Foto Fathur">
+                <h3>WULAN AYU SEPTYANINGTYAS</h3>
+                <p>Kelas: XII TKJ 2</p>
+            </div>
+            <div class="card" style="position: relative; text-align: center; padding: 20px;">
+                <img src="R-removebg-preview.png" alt="Logo" style="position: absolute; top: 10px; left: 10px; width: 40px; height: auto;">
+                <img src="user.jfif" alt="Foto Geri">
+                <h3>YENI OKTA RAHMA DONA</h3>
+                <p>Kelas: XII TKJ 2</p>
+            </div>
+            <div class="card" style="position: relative; text-align: center; padding: 20px;">
+                <img src="R-removebg-preview.png" alt="Logo" style="position: absolute; top: 10px; left: 10px; width: 40px; height: auto;">
+                <img src="user.jfif" alt="Foto Gilang">
+                <h3>YESI AMELIA</h3>
+                <p>Kelas: XII TKJ 2</p>
+            </div>
+            <div class="card" style="position: relative; text-align: center; padding: 20px;">
+                <img src="R-removebg-preview.png" alt="Logo" style="position: absolute; top: 10px; left: 10px; width: 40px; height: auto;">
+                <img src="user.jfif" alt="Foto Gilang">
+                <h3>YUNIKE DIAH AYU PRATIWI</h3>
+                <p>Kelas: XII TKJ 2</p>
+            </div>
+            <div class="card" style="position: relative; text-align: center; padding: 20px;">
+                <img src="R-removebg-preview.png" alt="Logo" style="position: absolute; top: 10px; left: 10px; width: 40px; height: auto;">
+                <img src="user.jfif" alt="Foto Gilang">
+                <h3>YUYUN HIDAYAH</h3>
+                <p>Kelas: XII TKJ 2</p>
+            </div>
+            <div class="card" style="position: relative; text-align: center; padding: 20px;">
+                <img src="R-removebg-preview.png" alt="Logo" style="position: absolute; top: 10px; left: 10px; width: 40px; height: auto;">
+                <img src="user.jfif" alt="Foto Gilang">
+                <h3>ZASKYA DEVI AGUSTIN</h3>
+                <p>Kelas: XII TKJ 2</p>
+            </div>
+            <div class="card" style="position: relative; text-align: center; padding: 20px;">
+                <img src="R-removebg-preview.png" alt="Logo" style="position: absolute; top: 10px; left: 10px; width: 40px; height: auto;">
+                <img src="user.jfif" alt="Foto Gilang">
+                <h3>ZUHDI NUHA NAUFAL ULA</h3>
+                <p>Kelas: XII TKJ 2</p>
+            </div>
+          </div>
+
+        <div id="guruCards" class="card-container">
+            <div class="card" style="position: relative; text-align: center; padding: 20px;">
+                <img src="R-removebg-preview.png" alt="Logo" style="position: absolute; top: 10px; left: 10px; width: 40px; height: auto;">
+                <img src="P.png" alt="Foto Ahmad Zainuri">
+                <h3>Pak Hukam</h3>
+                <p>Jabatan: Guru Pai</p>
+            </div>
+            <div class="card" style="position: relative; text-align: center; padding: 20px;">
+                <img src="R-removebg-preview.png" alt="Logo" style="position: absolute; top: 10px; left: 10px; width: 40px; height: auto;">
+                <img src="38.jpeg" alt="Foto Ainun Nisa">
+                <h3>Bu Candra</h3>
+                <p>Jabatan: Guru Mtk</p>
+            </div>
+            <div class="card" style="position: relative; text-align: center; padding: 20px;">
+                <img src="R-removebg-preview.png" alt="Logo" style="position: absolute; top: 10px; left: 10px; width: 40px; height: auto;">
+                <img src="34.jpeg" alt="Foto Nuranisah">
+                <h3>Bu Eni</h3>
+                <p>Jabatan: Guru B.inggris</p>
+            </div>
+            <div class="card" style="position: relative; text-align: center; padding: 20px;">
+                <img src="R-removebg-preview.png" alt="Logo" style="position: absolute; top: 10px; left: 10px; width: 40px; height: auto;">
+                <img src="RI.png" alt="Foto Nuranisah">
+                <h3>Bu Rida</h3>
+                <p>Jabatan: Guru B.jawa</p>
+            </div>
+            <div class="card" style="position: relative; text-align: center; padding: 20px;">
+                <img src="R-removebg-preview.png" alt="Logo" style="position: absolute; top: 10px; left: 10px; width: 40px; height: auto;">
+                <img src="buyuli.jpg" alt="Foto Nuranisah">
+                <h3>Bu Nurif</h3>
+                <p>Jabatan: Guru B.Indo</p>
+            </div>
+            <div class="card" style="position: relative; text-align: center; padding: 20px;">
+                <img src="R-removebg-preview.png" alt="Logo" style="position: absolute; top: 10px; left: 10px; width: 40px; height: auto;">
+                <img src="49.jpeg" alt="Foto Nuranisah">
+                <h3>Bu Novita</h3>
+                <p>Jabatan: Guru Bk</p>
+            </div>
+            <div class="card" style="position: relative; text-align: center; padding: 20px;">
+                <img src="R-removebg-preview.png" alt="Logo" style="position: absolute; top: 10px; left: 10px; width: 40px; height: auto;">
+                <img src="10.jpeg" alt="Foto Nuranisah">
+                <h3>Bu Intan</h3>
+                <p>Jabatan: Guru B6 TKJ</p>
+            </div>
+            <div class="card" style="position: relative; text-align: center; padding: 20px;">
+                <img src="R-removebg-preview.png" alt="Logo" style="position: absolute; top: 10px; left: 10px; width: 40px; height: auto;">
+                <img src="4.jpeg" alt="Foto Nuranisah">
+                <h3>Pak Muklis</h3>
+                <p>Jabatan: Guru B8A TKJ PILIHAN</p>
+            </div>
+            <div class="card" style="position: relative; text-align: center; padding: 20px;">
+                <img src="R-removebg-preview.png" alt="Logo" style="position: absolute; top: 10px; left: 10px; width: 40px; height: auto;">
+                <img src="Y.png" alt="Foto Nuranisah">
+                <h3>Bu Lala</h3>
+                <p>Jabatan: Guru B6</p>
+            </div>
+            <div class="card" style="position: relative; text-align: center; padding: 20px;">
+                <img src="R-removebg-preview.png" alt="Logo" style="position: absolute; top: 10px; left: 10px; width: 40px; height: auto;">
+                <img src="10.jpeg" alt="Foto Nuranisah">
+                <h3>Bu Intan</h3>
+                <p>Jabatan: Guru B6</p>
+            </div>
+            <div class="card" style="position: relative; text-align: center; padding: 20px;">
+                <img src="R-removebg-preview.png" alt="Logo" style="position: absolute; top: 10px; left: 10px; width: 40px; height: auto;">
+                <img src="3.jpeg" alt="Foto Nuranisah">
+                <h3>Bu Nur</h3>
+                <p>Jabatan: Guru B7</p>
+            </div>
+            <div class="card" style="position: relative; text-align: center; padding: 20px;">
+                <img src="R-removebg-preview.png" alt="Logo" style="position: absolute; top: 10px; left: 10px; width: 40px; height: auto;">
+                <img src="I.png" alt="Foto Nuranisah">
+                <h3>Bu Atik</h3>
+                <p>Jabatan: Guru B6</p>
+            </div>
+            <div class="card" style="position: relative; text-align: center; padding: 20px;">
+                <img src="R-removebg-preview.png" alt="Logo" style="position: absolute; top: 10px; left: 10px; width: 40px; height: auto;">
+                <img src="10.jpeg" alt="Foto Nuranisah">
+                <h3>Bu Intan</h3>
+                <p>Jabatan: Guru B6</p>
+            </div>
+            <div class="card" style="position: relative; text-align: center; padding: 20px;">
+                <img src="R-removebg-preview.png" alt="Logo" style="position: absolute; top: 10px; left: 10px; width: 40px; height: auto;">
+                <img src="t.png" alt="Foto Nuranisah">
+                <h3>Bu Tutik</h3>
+                <p>Jabatan: Guru PKN</p>
+            </div>
+        </div>
+
+        <div id="piketCards" class="card-container">
+            <div class="card">
+                <h3>Senin</h3>
+                <p> MELISA</p>
+                <p> NENO</p>
+                <p> ISMA</p>
+                <p> TIA</p>
+                <p> KISMI</p>
+                <p> LAILA</p>
+                <p> YUNIKE</p>
+            </div>
+            <div class="card">
+                <h3>Selasa</h3>
+                <p> AFIF</p>
+                <p> NOVA</p>
+                <p> PUTRI</p>
+                <p> AYU</p>
+                <p> TATIK</p>
+                <p> WAFDA</p>
+                <p> RISQ</p>
+            </div>
+            <div class="card">
+                <h3>Rabu</h3>
+                <p> NAPA</p>
+                <p> NOVITA</p>
+                <p> RAHMA</p>
+                <p> SISTIA</p>
+                <p> SRI</p>
+                <p> TIYAS</p>
+                <p> DEVI</p>
+            </div>
+            <div class="card">
+                <h3>Kamis</h3>
+                <p> NAILA</p>
+                <p> NUNGKI</p>
+                <p> YUYUN</p>
+                <p> AISYAH</p>
+                <p> SINTIA</p>
+                <p> YENI</p>
+                <p> NUHA</p>
+           </div>
+           <div class="card">
+                <h3>Jumat</h3>
+                <p> NANDA</p>
+                <p> MAYA</p>
+                <p> JANNAH</p>
+                <p> ZATIN</p>
+                <p> Dian</p>
+                <p> YESI</p>
+                <p> ZULFAN</p>
+           </div>
+        </div>
+
+        <div id="strukturCards" class="card-container">
+            <div class="card">
+                <h3>Ketua Kelas</h3>
+                <p>Nama: RIZQ</p>
+                <h3>Wakil</h3>
+                <p>Nama: NAILA</p>
+            </div>
+            <div class="card">
+                <h3>Sekertaris</h3>
+                <p>Nama: ISMA</p>
+            </div>
+            <div class="card">
+                <h3>Bendahara</h3>
+                <p>Nama:WAFDA</p>
+            </div>
+            <div class="card">
+                <h3>Kepala Sekolah</h3>
+                <img src="pak agus.png" alt="Foto Nuranisah">
+                <p>Nama: PAK AGUS</p>
+                <h3>Kepala Jurusan</h3>
+                <img src="10.jpeg" alt="Foto Nuranisah">
+                <p>Nama: BU.INTAN</p>
+            </div>
+
+         </div>
+
+        <div id="gallery" class="card-container">
+            <img src="FOTBAR.jfif" class="img-fluid" alt="..." style="width: 50%; height: auto;">
+        </div>
+
+        <div id="jadwalPelajaran" class="card-container">
+            <div class="card">
+                <h3>Senin</h3>
+                <p> PAI</p>
+                <p> MTK</p>
+                <p> B.INGGRIS</p>
+                <p> B.JAWA</p>
+            </div>
+            <div class="card">
+                <h3>Selasa</h3>
+                <p> B. INDO</p>
+                <p> BK</p>
+                <p> B6</p>
+                <p> B8A</p>
+            </div>
+            <div class="card">
+                <h3>Rabu</h3>
+                <p> B6 </p>
+                <p> B6 </p>
+            </div>
+            <div class="card">
+                <h3>Kamis</h3>
+                <p> B7</p>
+                <p> B6 </p>
+           </div>
+           <div class="card">
+                <h3>Jumat</h3>
+                <p> B6 </p>
+                <p> PKN </p>
+           </div>
+   
+ </div>
+        
+        <div id="kegiatanKelas" class="card-container">
+           <div class="card">
+                <h3>Kegiatan kelas</h3>
+                <p> MELAKUKAN KUNJUNGAN INDUSTRI</p>
+                <p> JUMAT RELIJI</p>
+            </div>
+       </div>
+
+  <footer style="text-align: center; padding: 20px; background-color: #121213; color: white; border-radius: 30px 30px 30px 30px; margin-top: 20px;">
+    <img src="RPL.png" alt="R-removebg-preview" style="margin-bottom: 5px; width: 100px; height: auto;">
+    <p>&copy; 2024 SMKN Tambakboyo.</p>
+    <p>Kontak: info@smkntambakboyo.sch.id | Telepon: (0271) 123-456</p>
+  </footer>
+
+</body>
+</html>
